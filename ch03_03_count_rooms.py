@@ -70,14 +70,13 @@ def printImage(image):
 
 
 def count_rooms(grid):
-
     room_counter = 0
     # Iterate through every cell in the grid.
     for y in range(len(grid)):
         for x in range(len(grid[0])):
-            if grid[y][x] == '.':
-                floodFill(im, x, y, '#')
-                room_counter = room_counter + 1
+            if grid[y][x] == '.':   # Found a new room to flood-fill
+                floodFill(im, x, y, '#')    # Fill the room with '#'.       
+                room_counter = room_counter + 1     # increment the room count
 
     return room_counter
 

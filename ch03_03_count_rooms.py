@@ -61,9 +61,10 @@ def printImage(image):
         # Print each row.
         for x in range(WIDTH):
             # Print each column.
-            sys.stdout.write(image[y][x])
-        sys.stdout.write('\n')
-    sys.stdout.write('\n')
+            print(image[y][x], end="")
+        print('')
+    print('')
+
 
 
 printImage(im)

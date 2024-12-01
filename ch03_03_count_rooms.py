@@ -28,17 +28,20 @@ im = [
 HEIGHT = len(im)
 WIDTH = len(im[0])
 
+
 def floodFill(image, x, y, newChar, oldChar=None):
+    
     if oldChar == None:
         # oldChar defaults to the character at x, y.
         oldChar = image[y][x]
     if oldChar == newChar or image[y][x] != oldChar:
         # BASE CASE
         return
+
     image[y][x] = newChar # Change the character.
 
     # Uncomment to view each step:
-    printImage(image)
+    # printImage(image)
     
     # Change the neighboring characters.
     if y + 1 < HEIGHT and image[y + 1][x] == oldChar:
@@ -66,7 +69,14 @@ def printImage(image):
     print('')
 
 
+def count_rooms(grid):
 
-printImage(im)
-floodFill(im, 4, 2, 'o')
-printImage(im)
+    room_counter = 0
+    # Iterate through every cell in the grid.
+    for y in range(len(grid)):
+        for x in range(len(grid[0])):
+            if grid[y][x] == '.':
+                floodFill(im, x, y, '#')
+                room_counter = room_counter + 1
+
+    return room_counter

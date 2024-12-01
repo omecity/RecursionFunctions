@@ -80,3 +80,7 @@ def count_rooms(grid):
                 room_counter = room_counter + 1
 
     return room_counter
+
+
+number_of_rooms = count_rooms(im)
+print("The number of room(s):", number_of_rooms)

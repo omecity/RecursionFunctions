@@ -6,18 +6,16 @@ Create a reverse-inorder search, one that performs an inorder traversal
 but traverses the right child node before the left child node.
 '''
 
-def inorderTraverse(node):
+def reverseInorderTraverse(node):
+    if len(node['children']) > 2:
+        # RECURSIVE CASE
+        reverseInorderTraverse(node['children'][1])    # Traverse the left child.
+    print(node['data'], end=' ')    # Access this node's data.
     if len(node['children']) >= 1:
         # RECURSIVE CASE
-        inorderTraverse(node['children'][0])    # Traverse the left child.
-    print(node['data'], end=' ')    # Access this node's data.
-    if len(node['children']) >= 2:
-        # RECURSIVE CASE
-        inorderTraverse(node['children'][1])    # Traverse the right child.
-    # print()
+        reverseInorderTraverse(node['children'][0])    # Traverse the right child.
     # BASE CASE
     return
-    # print()
     
 
 root = {'data': 'A', 'children': []}
@@ -34,5 +32,5 @@ node3['children'] = [node5, node6]
 node5['children'] = [node7, node8]
 
 # testing the function with a binary tree example 
-inorderTraverse(root)
+reverseInorderTraverse(root)
 print()

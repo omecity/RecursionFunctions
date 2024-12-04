@@ -7,11 +7,11 @@ but traverses the right child node before the left child node.
 '''
 
 def reverseInorderTraverse(node):
-    if len(node['children']) >= 2:
+    if len(node['children']) > 1:
         # RECURSIVE CASE
         reverseInorderTraverse(node['children'][1])    # Traverse the left child.
     print(node['data'], end=' ')    # Access this node's data.
-    if len(node['children']) >= 1:
+    if len(node['children']) > 0:
         # RECURSIVE CASE
         reverseInorderTraverse(node['children'][0])    # Traverse the right child.
     # BASE CASE

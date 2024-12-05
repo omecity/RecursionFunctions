@@ -13,28 +13,12 @@ overflow.
 
 
 def preorderTraverse(node):
-    print(node['data'], end=' ')    # Access this node's data.
     if len(node['children']) > 0:
         # RECURSIVE CASE
         for child in node['children']:
-            preorderTraverse(child)     # Traverse child nodes.
+            # Traverse child nodes.
             # BASE CASE
+            preorderTraverse(child)
+    else:
+        node['children'] = [{'data': node['data']*2, 'children': []}]
     return
-
-
-root = {'data': 'A', 'children': []}
-node2 = {'data': 'B', 'children': []}
-node3 = {'data': 'C', 'children': []}
-node4 = {'data': 'D', 'children': []}
-node5 = {'data': 'E', 'children': []}
-node6 = {'data': 'F', 'children': []}
-node7 = {'data': 'G', 'children': []}
-node8 = {'data': 'H', 'children': []}
-root['children'] = [node2, node3]
-node2['children'] = [node4]
-node3['children'] = [node5, node6]
-node5['children'] = [node7, node8]
-
-
-# call the preorderTraverse function on the tree
-preorderTraverse(root)

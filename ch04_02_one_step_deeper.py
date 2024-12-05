@@ -22,3 +22,12 @@ def preorderTraverse(node):
     else:
         node['children'] = [{'data': node['data']*2, 'children': []}]
     return
+
+
+def printRoot(node):
+    print(node['data'], end=' ')    # Access this node's data.
+    if len(node['children']) > 0:
+        # RECURSIVE CASE
+        for child in node['children']:
+            # Traverse child nodes to print them.            
+            printRoot(child)

@@ -47,7 +47,7 @@ node3['children'] = [node5, node6]
 node5['children'] = [node7, node8]
 
 
-# call the preorderTraverse function on the tree
+# call the preorderTraverse function on the tree/root structure
 preorderTraverse(root)
 
 # show the tree in order of preorder traversal
